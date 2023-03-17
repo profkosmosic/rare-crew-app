@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     this.getEmployeeData();
   }
 
-  getEmployeeData(): void {
+  private getEmployeeData(): void {
     this.employeeService.get().subscribe(employeeRecords => {
       this.employeeRecordList = employeeRecords;
       this.employeeList = this.getEmployees(this.employeeRecordList);
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getEmployees(record:IEmployeeRecord[]): IEmployee[] {
+  private getEmployees(record:IEmployeeRecord[]): IEmployee[] {
     let employees : IEmployee[] = [];
     for(let i = 0; i < record.length; i++) {
       if(employees.find(e => e.EmployeeName === record[i].EmployeeName) === undefined && record[i].EmployeeName) {
@@ -41,13 +41,13 @@ export class HomeComponent implements OnInit {
     return employees;
   }
 
-  setEmployeeTime() {
+  private setEmployeeTime() {
     for(let i = 0; i < this.employeeList.length; i++) {
       this.calculateTotalTime(this.employeeList[i], i);
     }
   }
 
-  calculateTotalTime(employee:IEmployee, index:number) {
+  private calculateTotalTime(employee:IEmployee, index:number) {
     for(let i = 0; i < this.employeeRecordList.length; i++) {
       if(this.employeeRecordList[i].EmployeeName === employee.EmployeeName) {
         this.employeeList[index].TotalTime += Math.abs(new Date(this.employeeRecordList[i].EndTimeUtc).getHours() - new Date(this.employeeRecordList[i].StarTimeUtc).getHours());
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  sortEmployees() {
+  private sortEmployees() {
     this.employeeList.sort(function(a,b) {
       return b.TotalTime - a.TotalTime;
     })

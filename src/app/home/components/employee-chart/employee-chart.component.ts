@@ -14,7 +14,7 @@ export class EmployeeChartComponent implements OnInit {
     this.createChart();
   }
 
-  getEmployeeNames(): string[] {
+  private getEmployeeNames(): string[] {
     let employeeNames: string[] = [];
     for(let i = 0; i < this.employees.length; i++) {
       employeeNames.push(this.employees[i].EmployeeName);
@@ -22,7 +22,7 @@ export class EmployeeChartComponent implements OnInit {
     return employeeNames;
   }
 
-  getEmployeeTime(): number[] {
+  private getEmployeeTime(): number[] {
     let employeeTime: number[] = [];
     for(let i = 0; i < this.employees.length; i++) {
       employeeTime.push(this.employees[i].TotalTime);
@@ -30,7 +30,7 @@ export class EmployeeChartComponent implements OnInit {
     return employeeTime;
   }
 
-  calculatePercentage(): number[] {
+  private calculatePercentage(): number[] {
     let employeeTime: number[] = this.getEmployeeTime();
     let employeePercentage: number[] = [];
     let sum = 0;
@@ -43,7 +43,7 @@ export class EmployeeChartComponent implements OnInit {
     return employeePercentage;
   }
 
-  createChart() {
+  private createChart() {
     new Chart("myChart", {
       type: "pie",
       data: {
