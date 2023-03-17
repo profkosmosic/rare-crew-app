@@ -1,0 +1,14 @@
+<section>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th style="text-align: center;">Total Time in Month</th>
+            <th style="text-align: center;">Actions</th>
+        </tr>
+        <tr *ngFor="let employee of employees" [class]="employee.TotalTime < 100 ? 'lowHours' : ''">
+            <td>{{employee.EmployeeName}}</td>
+            <td style="text-align: center;">{{employee.TotalTime}} hrs</td>
+            <td style="text-align: center;"><a href="#">Edit</a></td>
+        </tr>
+    </table>
+</section>

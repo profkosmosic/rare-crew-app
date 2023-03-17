@@ -1,0 +1,30 @@
+section {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+}
+
+th {
+    background-color: #E5E5E5;
+}
+
+td, th {
+    border: 2px solid #d3d3d3;
+    text-align: left;
+    padding: 8px;
+}
+
+.lowHours {
+    background-color: #F4AD9C;
+}
+
+@media (max-width: 700px) {
+    table {
+        width: 90%;
+    }
+}

@@ -1,0 +1,6 @@
+<section *ngIf="employeeList.length > 0">
+    <h1>Employee Table</h1>
+    <app-employee-table [employees]="employeeList"></app-employee-table>
+    <h1>Employee Pie Chart</h1>
+    <app-employee-chart [employees]="employeeList"></app-employee-chart>
+</section>

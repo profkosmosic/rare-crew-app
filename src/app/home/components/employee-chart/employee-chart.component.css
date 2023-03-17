@@ -1,0 +1,25 @@
+#flexContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#chartContainer {
+    height: 650px;
+    width: 650px;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 1000px) {
+    #chartContainer {
+        height: 500px;
+        width: 500px;
+    }
+}
+
+@media (max-width: 700px) {
+    #chartContainer {
+        height: 350px;
+        width: 350px;
+    }
+}
